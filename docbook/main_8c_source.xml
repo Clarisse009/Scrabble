@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_main_8c_source" xml:lang="en-US">
+<title>main.c</title>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_main_8c_source_1l00001"/>00001 <emphasis role="comment">//&#32;main.c</emphasis>
+<anchor xml:id="_main_8c_source_1l00002"/>00002 
+<anchor xml:id="_main_8c_source_1l00003"/>00003 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_header_8h">header.h</link>&quot;</emphasis>
+<anchor xml:id="_main_8c_source_1l00004"/>00004 <emphasis role="preprocessor">#include&#32;&lt;stdio.h&gt;</emphasis>
+<anchor xml:id="_main_8c_source_1l00005"/>00005 <emphasis role="preprocessor">#include&#32;&lt;stdlib.h&gt;</emphasis>
+<anchor xml:id="_main_8c_source_1l00006"/>00006 <emphasis role="preprocessor">#include&#32;&lt;time.h&gt;</emphasis>&#32;<emphasis role="comment">//&#32;Ajout&#32;de&#32;la&#32;bibliothèque&#32;time&#32;pour&#32;initialiser&#32;le&#32;générateur&#32;de&#32;nombres&#32;pseudo-aléatoires</emphasis>
+<anchor xml:id="_main_8c_source_1l00007"/>00007 <emphasis role="preprocessor">#include&#32;&lt;string.h&gt;</emphasis>
+<anchor xml:id="_main_8c_source_1l00008"/>00008 <emphasis role="preprocessor">#include&#32;&lt;unistd.h&gt;</emphasis>&#32;<emphasis role="comment">//&#32;nécessaire&#32;pour&#32;usleep</emphasis>
+<anchor xml:id="_main_8c_source_1l00009"/>00009 <emphasis role="preprocessor">#include&#32;&lt;ctype.h&gt;</emphasis>
+<anchor xml:id="_main_8c_source_1l00010"/>00010 <emphasis role="preprocessor">#include&#32;&lt;windows.h&gt;</emphasis>
+<anchor xml:id="_main_8c_source_1l00011"/>00011 <emphasis role="preprocessor">#include&#32;&lt;stdbool.h&gt;</emphasis>
+<anchor xml:id="_main_8c_source_1l00012"/>00012 <emphasis role="comment">//&#32;scrabble.c</emphasis>
+<anchor xml:id="_main_8c_source_1l00013"/>00013 
+<anchor xml:id="_main_8c_source_1l00014"/>00014 
+<anchor xml:id="_main_8c_source_1l00015"/>00015 
+<anchor xml:id="_main_8c_source_1l00016"/><link linkend="_main_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4">00016</link> <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_main_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link>()&#32;{
+<anchor xml:id="_main_8c_source_1l00017"/>00017 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Initialisation&#32;des&#32;structures&#32;nécessaires&#32;(sac,&#32;plateau,&#32;joueur,&#32;etc.)</emphasis>
+<anchor xml:id="_main_8c_source_1l00018"/>00018 &#32;&#32;&#32;&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_sac_de_jetons">SacDeJetons</link>&#32;<link linkend="_header_8h_1ad714fb89ca359bc9d6428b8e5827d003">sac</link>;
+<anchor xml:id="_main_8c_source_1l00019"/>00019 &#32;&#32;&#32;&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_plateau">Plateau</link>&#32;plateau;
+<anchor xml:id="_main_8c_source_1l00020"/>00020 &#32;&#32;&#32;&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_joueur">Joueur</link>&#32;joueur;
+<anchor xml:id="_main_8c_source_1l00021"/>00021 
+<anchor xml:id="_main_8c_source_1l00022"/>00022 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;...&#32;(initialisez&#32;d&apos;autres&#32;structures&#32;ou&#32;configurations&#32;nécessaires)</emphasis>
+<anchor xml:id="_main_8c_source_1l00023"/>00023 
+<anchor xml:id="_main_8c_source_1l00024"/>00024 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;choixMenu;
+<anchor xml:id="_main_8c_source_1l00025"/>00025 
+<anchor xml:id="_main_8c_source_1l00026"/>00026 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">do</emphasis>&#32;{
+<anchor xml:id="_main_8c_source_1l00027"/>00027 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Affichage&#32;du&#32;menu&#32;principal</emphasis>
+<anchor xml:id="_main_8c_source_1l00028"/>00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(<emphasis role="stringliteral">&quot;Menu&#32;Principal:\n&quot;</emphasis>);
+<anchor xml:id="_main_8c_source_1l00029"/>00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(<emphasis role="stringliteral">&quot;1.&#32;Nouveau&#32;Jeu\n&quot;</emphasis>);
+<anchor xml:id="_main_8c_source_1l00030"/>00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(<emphasis role="stringliteral">&quot;2.&#32;Charger&#32;Partie\n&quot;</emphasis>);
+<anchor xml:id="_main_8c_source_1l00031"/>00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(<emphasis role="stringliteral">&quot;3.&#32;Quitter\n&quot;</emphasis>);
+<anchor xml:id="_main_8c_source_1l00032"/>00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(<emphasis role="stringliteral">&quot;Choisissez&#32;une&#32;option&#32;:&#32;&quot;</emphasis>);
+<anchor xml:id="_main_8c_source_1l00033"/>00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;scanf(<emphasis role="stringliteral">&quot;%d&quot;</emphasis>,&#32;&amp;choixMenu);
+<anchor xml:id="_main_8c_source_1l00034"/>00034 
+<anchor xml:id="_main_8c_source_1l00035"/>00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">switch</emphasis>&#32;(choixMenu)&#32;{
+<anchor xml:id="_main_8c_source_1l00036"/>00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;1:
+<anchor xml:id="_main_8c_source_1l00037"/>00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Nouveau&#32;Jeu</emphasis>
+<anchor xml:id="_main_8c_source_1l00038"/>00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_header_8h_1a6b0067666ba7d74453f3a3c2c61d84a6">Menu</link>();
+<anchor xml:id="_main_8c_source_1l00039"/>00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_main_8c_source_1l00040"/>00040 
+<anchor xml:id="_main_8c_source_1l00041"/>00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;2:
+<anchor xml:id="_main_8c_source_1l00042"/>00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Charger&#32;Partie&#32;(ajoutez&#32;votre&#32;logique&#32;de&#32;chargement&#32;ici)</emphasis>
+<anchor xml:id="_main_8c_source_1l00043"/>00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(<emphasis role="stringliteral">&quot;Fonctionnalité&#32;de&#32;chargement&#32;de&#32;partie&#32;non&#32;encore&#32;implémentée.\n&quot;</emphasis>);
+<anchor xml:id="_main_8c_source_1l00044"/>00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_main_8c_source_1l00045"/>00045 
+<anchor xml:id="_main_8c_source_1l00046"/>00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;3:
+<anchor xml:id="_main_8c_source_1l00047"/>00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Quitter</emphasis>
+<anchor xml:id="_main_8c_source_1l00048"/>00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(<emphasis role="stringliteral">&quot;Au&#32;revoir&#32;!\n&quot;</emphasis>);
+<anchor xml:id="_main_8c_source_1l00049"/>00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+<anchor xml:id="_main_8c_source_1l00050"/>00050 
+<anchor xml:id="_main_8c_source_1l00051"/>00051 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">default</emphasis>:
+<anchor xml:id="_main_8c_source_1l00052"/>00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(<emphasis role="stringliteral">&quot;Option&#32;invalide.&#32;Veuillez&#32;choisir&#32;une&#32;option&#32;valide.\n&quot;</emphasis>);
+<anchor xml:id="_main_8c_source_1l00053"/>00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_main_8c_source_1l00054"/>00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_main_8c_source_1l00055"/>00055 
+<anchor xml:id="_main_8c_source_1l00056"/>00056 &#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">while</emphasis>&#32;(1);&#32;&#32;<emphasis role="comment">//&#32;Boucle&#32;infinie&#32;pour&#32;le&#32;menu&#32;principal</emphasis>
+<anchor xml:id="_main_8c_source_1l00057"/>00057 
+<anchor xml:id="_main_8c_source_1l00058"/>00058 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+<anchor xml:id="_main_8c_source_1l00059"/>00059 }
+</programlisting></section>

@@ -1,0 +1,58 @@
+digraph "jouerParties"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="jouerParties",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge53_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="afficherPlateauAvecBordures",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$sspgm_8c.html#aafe6c1764fdcac8f2f297762d0c6484d",tooltip=" "];
+  Node2 -> Node3 [id="edge54_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="resetColor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$sspgm_8c.html#afe00396766eb6b8ca4674de4c5d3d949",tooltip=" "];
+  Node2 -> Node4 [id="edge55_Node000002_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="setColor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$sspgm_8c.html#a75b9cb32ff80bf061791beb01a8433d0",tooltip=" "];
+  Node1 -> Node5 [id="edge56_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="initialiserChevalet",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$sspgm_8c.html#ab42256bf99a127446582147bcab7517d",tooltip=" "];
+  Node1 -> Node6 [id="edge57_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="initialiserPlateau",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$sspgm_8c.html#a7542b1a0bab64f040b0207557390ef70",tooltip=" "];
+  Node1 -> Node7 [id="edge58_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="libererMemoireJoueurs",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$sspgm_8c.html#a6b8b52777c2a123f3b038f2c1dcb08ff",tooltip=" "];
+  Node1 -> Node8 [id="edge59_Node000001_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="saisirNombreJoueurs",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$sspgm_8c.html#ac2d52dae5f7f866b48fedecf4cb85819",tooltip=" "];
+  Node1 -> Node9 [id="edge60_Node000001_Node000009",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="saisirNomsJoueurs",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$sspgm_8c.html#af6e24be33010eaa11b5bed912225917e",tooltip=" "];
+  Node1 -> Node10 [id="edge61_Node000001_Node000010",color="steelblue1",style="solid",tooltip=" "];
+  Node10 [id="Node000010",label="tourDeJeu",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$sspgm_8c.html#a8c9be5841b813b76cb58fb875a726720",tooltip=" "];
+  Node10 -> Node11 [id="edge62_Node000010_Node000011",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="abandonnerJeu",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$sspgm_8c.html#aec3978e0c8aa77c1ffa58169366f915c",tooltip=" "];
+  Node11 -> Node6 [id="edge63_Node000011_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node11 -> Node12 [id="edge64_Node000011_Node000012",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="initialiserSacDeJetons",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$sspgm_8c.html#a1c91f2bb19a517cd09d40a437015f526",tooltip=" "];
+  Node11 -> Node13 [id="edge65_Node000011_Node000013",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="Menu",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$sspgm_8c.html#a6b0067666ba7d74453f3a3c2c61d84a6",tooltip=" "];
+  Node13 -> Node1 [id="edge66_Node000013_Node000001",color="steelblue1",style="solid",tooltip=" "];
+  Node10 -> Node14 [id="edge67_Node000010_Node000014",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="afficherChronometre",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$sspgm_8c.html#a5c53e4e38a5a5dd0255154f34b2f97f5",tooltip=" "];
+  Node10 -> Node15 [id="edge68_Node000010_Node000015",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="afficherMotSurPlateau",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$sspgm_8c.html#acf9028e4c97a01a61799466467dd8328",tooltip=" "];
+  Node10 -> Node2 [id="edge69_Node000010_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node10 -> Node16 [id="edge70_Node000010_Node000016",color="steelblue1",style="solid",tooltip=" "];
+  Node16 [id="Node000016",label="afficherPlateauAvecMots",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$sspgm_8c.html#a0ec96f0e78daea20fbaadfaa0265ef7d",tooltip=" "];
+  Node10 -> Node17 [id="edge71_Node000010_Node000017",color="steelblue1",style="solid",tooltip=" "];
+  Node17 [id="Node000017",label="arreterChronometre",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$sspgm_8c.html#a0a0e06d44d3181d5d789c0edf117bd1f",tooltip=" "];
+  Node10 -> Node18 [id="edge72_Node000010_Node000018",color="steelblue1",style="solid",tooltip=" "];
+  Node18 [id="Node000018",label="demarrerChronometre",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$sspgm_8c.html#a138484bf93fbfd911dde40aba32ec463",tooltip=" "];
+  Node18 -> Node19 [id="edge73_Node000018_Node000019",color="steelblue1",style="solid",tooltip=" "];
+  Node19 [id="Node000019",label="chronometre",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$sspgm_8c.html#a221172025df8249130db3f63f93d7332",tooltip=" "];
+  Node10 -> Node20 [id="edge74_Node000010_Node000020",color="steelblue1",style="solid",tooltip=" "];
+  Node20 [id="Node000020",label="motValide",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$sspgm_8c.html#a3035e93c68052101047b79fc93660680",tooltip=" "];
+  Node10 -> Node21 [id="edge75_Node000010_Node000021",color="steelblue1",style="solid",tooltip=" "];
+  Node21 [id="Node000021",label="piocherLettres",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$sspgm_8c.html#a5128519771d9eb20c4a417a47b42336b",tooltip=" "];
+  Node10 -> Node22 [id="edge76_Node000010_Node000022",color="steelblue1",style="solid",tooltip=" "];
+  Node22 [id="Node000022",label="saisirEmplacement",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$sspgm_8c.html#a6ebe1942c0cc6bcf1add4113169b5056",tooltip=" "];
+  Node10 -> Node23 [id="edge77_Node000010_Node000023",color="steelblue1",style="solid",tooltip=" "];
+  Node23 [id="Node000023",label="saisirMotPlacement",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$sspgm_8c.html#ae39022681322f8055ae7e411ee5052b0",tooltip=" "];
+  Node10 -> Node24 [id="edge78_Node000010_Node000024",color="steelblue1",style="solid",tooltip=" "];
+  Node24 [id="Node000024",label="saisirSensMot",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$sspgm_8c.html#aabe753c71634fa9afaef8ba7cfdeeaa1",tooltip=" "];
+}

@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_sac_de_jetons" xml:lang="en-US">
+<title>SacDeJetons Struct Reference</title>
+<indexterm><primary>SacDeJetons</primary></indexterm>
+<para>
+<computeroutput>#include &lt;header.h&gt;</computeroutput>
+</para>
+Collaboration diagram for SacDeJetons:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_sac_de_jetons__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_jeton">Jeton</link> <link linkend="_struct_sac_de_jetons_1a3af7ae9c7b2376b4296a95499430ccd9">jetons</link> [<link linkend="_header_8h_1a8615188743ced8e957e5f5c53498026c">NOMBRE_TOTAL_DE_JETONS</link>]</para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_sac_de_jetons_1aec5909df9f12297276daba4cb92467b7">nbJetonsRestants</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="_header_8h_source_1l00039">39</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_sac_de_jetons_1a3af7ae9c7b2376b4296a95499430ccd9"/><section>
+    <title>jetons</title>
+<indexterm><primary>jetons</primary><secondary>SacDeJetons</secondary></indexterm>
+<indexterm><primary>SacDeJetons</primary><secondary>jetons</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_struct_jeton">Jeton</link> SacDeJetons::jetons[<link linkend="_header_8h_1a8615188743ced8e957e5f5c53498026c">NOMBRE_TOTAL_DE_JETONS</link>]</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00040">40</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_struct_sac_de_jetons_1aec5909df9f12297276daba4cb92467b7"/><section>
+    <title>nbJetonsRestants</title>
+<indexterm><primary>nbJetonsRestants</primary><secondary>SacDeJetons</secondary></indexterm>
+<indexterm><primary>SacDeJetons</primary><secondary>nbJetonsRestants</secondary></indexterm>
+<para><computeroutput>int SacDeJetons::nbJetonsRestants</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00041">41</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_header_8h">header.h</link></section>
+</section>

@@ -1,0 +1,764 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_header_8h" xml:lang="en-US">
+<title>header.h File Reference</title>
+<indexterm><primary>header.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &lt;stdbool.h&gt;<?linebreak?>#include &lt;stdlib.h&gt;<?linebreak?>#include &lt;time.h&gt;<?linebreak?>#include &lt;string.h&gt;<?linebreak?>#include &lt;unistd.h&gt;<?linebreak?>#include &lt;ctype.h&gt;<?linebreak?>#include &lt;windows.h&gt;<?linebreak?>#include &lt;pthread.h&gt;<?linebreak?></programlisting>Include dependency graph for header.h:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_jeton">Jeton</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_sac_de_jetons">SacDeJetons</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_joueur">Joueur</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_mot_place">MotPlace</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_plateau">Plateau</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_chronometre_info">ChronometreInfo</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_header_8h_1a9d01b9bb7c13f3d39b767df21342a371">LARGEUR_PLATEAU</link>&#160;&#160;&#160;15</para>
+</listitem>
+            <listitem><para>#define <link linkend="_header_8h_1a29927d4a51e622dc39783f06f6197f14">HAUTEUR_PLATEAU</link>&#160;&#160;&#160;15</para>
+</listitem>
+            <listitem><para>#define <link linkend="_header_8h_1ad7c3b975e5552a122f836b02fa138502">RESET_COLOR</link>&#160;&#160;&#160;7</para>
+</listitem>
+            <listitem><para>#define <link linkend="_header_8h_1ae419a56a77e3fc8139e8af88c93db7eb">BONUS_LETTRE_DOUBLE</link>&#160;&#160;&#160;&apos;L&apos;</para>
+</listitem>
+            <listitem><para>#define <link linkend="_header_8h_1abd0197c95d824a85ab9a8bdab59c7952">BONUS_LETTRE_TRIPLE</link>&#160;&#160;&#160;&apos;l&apos;</para>
+</listitem>
+            <listitem><para>#define <link linkend="_header_8h_1a0df31e09944685ed67a2e7d0dd1c4cd7">BONUS_MOT_DOUBLE</link>&#160;&#160;&#160;&apos;M&apos;</para>
+</listitem>
+            <listitem><para>#define <link linkend="_header_8h_1ab3c0a9db5827a0921cc5f4d3735edc46">BONUS_MOT_TRIPLE</link>&#160;&#160;&#160;&apos;m&apos;</para>
+</listitem>
+            <listitem><para>#define <link linkend="_header_8h_1a8615188743ced8e957e5f5c53498026c">NOMBRE_TOTAL_DE_JETONS</link>&#160;&#160;&#160;100</para>
+</listitem>
+            <listitem><para>#define <link linkend="_header_8h_1ae142b97b7fd1a11e272db115ff3e9dd0">NOMBRE_LETTRES_ALPHABET</link>&#160;&#160;&#160;26</para>
+</listitem>
+            <listitem><para>#define <link linkend="_header_8h_1a4a0360548ced653d9def25924808d677">NOMBRE_LETTRES_PIOCHE</link>&#160;&#160;&#160;7</para>
+</listitem>
+            <listitem><para>#define <link linkend="_header_8h_1a8076e41d81de561b4ea9089b6bae4d0a">NOMBRE_JOUEURS</link>&#160;&#160;&#160;4</para>
+</listitem>
+            <listitem><para>#define <link linkend="_header_8h_1a638186aae25d9df69cfcdbc0d8a75d86">MAX_MOTS_DICTIONNAIRE</link>&#160;&#160;&#160;100000</para>
+</listitem>
+            <listitem><para>#define <link linkend="_header_8h_1a9327754b56aee6200982dd55f31d3301">ROUGE_COLOR</link>&#160;&#160;&#160;12</para>
+</listitem>
+            <listitem><para>#define <link linkend="_header_8h_1a8bec76a2c45a3f9101fab88c2284dcc5">VERT_COLOR</link>&#160;&#160;&#160;10</para>
+</listitem>
+            <listitem><para>#define <link linkend="_header_8h_1ac539733c482261fa6377ba34ba022a21">BLEU_COLOR</link>&#160;&#160;&#160;9</para>
+</listitem>
+            <listitem><para>#define <link linkend="_header_8h_1a306e57e752f7cb2b0123514c67a5459b">JAUNE_COLOR</link>&#160;&#160;&#160;14</para>
+</listitem>
+            <listitem><para>#define <link linkend="_header_8h_1a891725f62dcd870ad42d51957c4fa9fa">VIOLET_COLOR</link>&#160;&#160;&#160;13</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_header_8h_1a7542b1a0bab64f040b0207557390ef70">initialiserPlateau</link> (struct <link linkend="_struct_plateau">Plateau</link> *plateau)</para>
+</listitem>
+            <listitem><para>void <link linkend="_header_8h_1a50c50255ace22713cf8b73636bcace30">afficherPlateau</link> (const struct <link linkend="_struct_plateau">Plateau</link> *plateau)</para>
+</listitem>
+            <listitem><para>int <link linkend="_header_8h_1ac2d52dae5f7f866b48fedecf4cb85819">saisirNombreJoueurs</link> ()</para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_joueur">Joueur</link> * <link linkend="_header_8h_1af6e24be33010eaa11b5bed912225917e">saisirNomsJoueurs</link> (int nombreJoueurs)</para>
+</listitem>
+            <listitem><para>void <link linkend="_header_8h_1a6b8b52777c2a123f3b038f2c1dcb08ff">libererMemoireJoueurs</link> (struct <link linkend="_struct_joueur">Joueur</link> *joueurs)</para>
+</listitem>
+            <listitem><para>void <link linkend="_header_8h_1a6a43f02509c7b79b600ba7b2f72dc136">afficherInformationJoueur</link> (const struct <link linkend="_struct_joueur">Joueur</link> *joueur)</para>
+</listitem>
+            <listitem><para>void <link linkend="_header_8h_1ab42256bf99a127446582147bcab7517d">initialiserChevalet</link> (struct <link linkend="_struct_joueur">Joueur</link> *joueur)</para>
+</listitem>
+            <listitem><para>void <link linkend="_header_8h_1ae39022681322f8055ae7e411ee5052b0">saisirMotPlacement</link> (struct <link linkend="_struct_joueur">Joueur</link> *joueur)</para>
+</listitem>
+            <listitem><para>void <link linkend="_header_8h_1a6ebe1942c0cc6bcf1add4113169b5056">saisirEmplacement</link> (struct <link linkend="_struct_joueur">Joueur</link> *joueur, int *ligne, int *colonne)</para>
+</listitem>
+            <listitem><para>void <link linkend="_header_8h_1aabe753c71634fa9afaef8ba7cfdeeaa1">saisirSensMot</link> (struct <link linkend="_struct_joueur">Joueur</link> *joueur)</para>
+</listitem>
+            <listitem><para>void <link linkend="_header_8h_1acf9028e4c97a01a61799466467dd8328">afficherMotSurPlateau</link> (struct <link linkend="_struct_plateau">Plateau</link> *plateau, const struct <link linkend="_struct_joueur">Joueur</link> *joueur)</para>
+</listitem>
+            <listitem><para>void <link linkend="_header_8h_1a0ec96f0e78daea20fbaadfaa0265ef7d">afficherPlateauAvecMots</link> (const struct <link linkend="_struct_plateau">Plateau</link> *plateau)</para>
+</listitem>
+            <listitem><para>void <link linkend="_header_8h_1a75b9cb32ff80bf061791beb01a8433d0">setColor</link> (int color)</para>
+</listitem>
+            <listitem><para>void <link linkend="_header_8h_1afe00396766eb6b8ca4674de4c5d3d949">resetColor</link> ()</para>
+</listitem>
+            <listitem><para>int <link linkend="_header_8h_1a8c4ac5d84916abe58e256541f49e1c42">getColorForBonus</link> (char bonusSymbol)</para>
+</listitem>
+            <listitem><para>void <link linkend="_header_8h_1aafe6c1764fdcac8f2f297762d0c6484d">afficherPlateauAvecBordures</link> (const struct <link linkend="_struct_plateau">Plateau</link> *plateau)</para>
+</listitem>
+            <listitem><para>void <link linkend="_header_8h_1ab8b1fd45c61c8a6cbedf8a1bdb74b921">jouerParties</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_header_8h_1a1c91f2bb19a517cd09d40a437015f526">initialiserSacDeJetons</link> (struct <link linkend="_struct_sac_de_jetons">SacDeJetons</link> *<link linkend="_header_8h_1ad714fb89ca359bc9d6428b8e5827d003">sac</link>)</para>
+</listitem>
+            <listitem><para>void <link linkend="_header_8h_1a5128519771d9eb20c4a417a47b42336b">piocherLettres</link> (struct <link linkend="_struct_sac_de_jetons">SacDeJetons</link> *<link linkend="_header_8h_1ad714fb89ca359bc9d6428b8e5827d003">sac</link>, struct <link linkend="_struct_joueur">Joueur</link> *joueur, int nbLettres)</para>
+</listitem>
+            <listitem><para>void <link linkend="_header_8h_1a8c9be5841b813b76cb58fb875a726720">tourDeJeu</link> (struct <link linkend="_struct_sac_de_jetons">SacDeJetons</link> *<link linkend="_header_8h_1ad714fb89ca359bc9d6428b8e5827d003">sac</link>, struct <link linkend="_struct_plateau">Plateau</link> *plateau, struct <link linkend="_struct_joueur">Joueur</link> *joueurs, int joueurActuel)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_header_8h_1a3035e93c68052101047b79fc93660680">motValide</link> (const char *mot)</para>
+</listitem>
+            <listitem><para>int <link linkend="_header_8h_1a6b0067666ba7d74453f3a3c2c61d84a6">Menu</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_header_8h_1aec3978e0c8aa77c1ffa58169366f915c">abandonnerJeu</link> (struct <link linkend="_struct_sac_de_jetons">SacDeJetons</link> *<link linkend="_header_8h_1ad714fb89ca359bc9d6428b8e5827d003">sac</link>, struct <link linkend="_struct_plateau">Plateau</link> *plateau, struct <link linkend="_struct_joueur">Joueur</link> *joueur)</para>
+</listitem>
+            <listitem><para>void * <link linkend="_header_8h_1a221172025df8249130db3f63f93d7332">chronometre</link> (void *arg)</para>
+</listitem>
+            <listitem><para>void <link linkend="_header_8h_1a1b225a9e0593fd36483927054f5c3626">reinitialiserChronometre</link> (struct <link linkend="_struct_chronometre_info">ChronometreInfo</link> *chronoInfo)</para>
+</listitem>
+            <listitem><para>void <link linkend="_header_8h_1a138484bf93fbfd911dde40aba32ec463">demarrerChronometre</link> (struct <link linkend="_struct_chronometre_info">ChronometreInfo</link> *chronoInfo)</para>
+</listitem>
+            <listitem><para>void <link linkend="_header_8h_1a0a0e06d44d3181d5d789c0edf117bd1f">arreterChronometre</link> (struct <link linkend="_struct_chronometre_info">ChronometreInfo</link> *chronoInfo)</para>
+</listitem>
+            <listitem><para>void <link linkend="_header_8h_1a5c53e4e38a5a5dd0255154f34b2f97f5">afficherChronometre</link> (struct <link linkend="_struct_chronometre_info">ChronometreInfo</link> *chronoInfo)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_sac_de_jetons">SacDeJetons</link> <link linkend="_header_8h_1ad714fb89ca359bc9d6428b8e5827d003">sac</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_header_8h_1ac539733c482261fa6377ba34ba022a21"/><section>
+    <title>BLEU_COLOR</title>
+<indexterm><primary>BLEU_COLOR</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>BLEU_COLOR</secondary></indexterm>
+<para><computeroutput>#define BLEU_COLOR&#160;&#160;&#160;9</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00073">73</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_header_8h_1ae419a56a77e3fc8139e8af88c93db7eb"/><section>
+    <title>BONUS_LETTRE_DOUBLE</title>
+<indexterm><primary>BONUS_LETTRE_DOUBLE</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>BONUS_LETTRE_DOUBLE</secondary></indexterm>
+<para><computeroutput>#define BONUS_LETTRE_DOUBLE&#160;&#160;&#160;&apos;L&apos;</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00017">17</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_header_8h_1abd0197c95d824a85ab9a8bdab59c7952"/><section>
+    <title>BONUS_LETTRE_TRIPLE</title>
+<indexterm><primary>BONUS_LETTRE_TRIPLE</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>BONUS_LETTRE_TRIPLE</secondary></indexterm>
+<para><computeroutput>#define BONUS_LETTRE_TRIPLE&#160;&#160;&#160;&apos;l&apos;</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00018">18</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_header_8h_1a0df31e09944685ed67a2e7d0dd1c4cd7"/><section>
+    <title>BONUS_MOT_DOUBLE</title>
+<indexterm><primary>BONUS_MOT_DOUBLE</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>BONUS_MOT_DOUBLE</secondary></indexterm>
+<para><computeroutput>#define BONUS_MOT_DOUBLE&#160;&#160;&#160;&apos;M&apos;</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00019">19</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_header_8h_1ab3c0a9db5827a0921cc5f4d3735edc46"/><section>
+    <title>BONUS_MOT_TRIPLE</title>
+<indexterm><primary>BONUS_MOT_TRIPLE</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>BONUS_MOT_TRIPLE</secondary></indexterm>
+<para><computeroutput>#define BONUS_MOT_TRIPLE&#160;&#160;&#160;&apos;m&apos;</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00020">20</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_header_8h_1a29927d4a51e622dc39783f06f6197f14"/><section>
+    <title>HAUTEUR_PLATEAU</title>
+<indexterm><primary>HAUTEUR_PLATEAU</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>HAUTEUR_PLATEAU</secondary></indexterm>
+<para><computeroutput>#define HAUTEUR_PLATEAU&#160;&#160;&#160;15</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00015">15</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_header_8h_1a306e57e752f7cb2b0123514c67a5459b"/><section>
+    <title>JAUNE_COLOR</title>
+<indexterm><primary>JAUNE_COLOR</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>JAUNE_COLOR</secondary></indexterm>
+<para><computeroutput>#define JAUNE_COLOR&#160;&#160;&#160;14</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00074">74</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_header_8h_1a9d01b9bb7c13f3d39b767df21342a371"/><section>
+    <title>LARGEUR_PLATEAU</title>
+<indexterm><primary>LARGEUR_PLATEAU</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>LARGEUR_PLATEAU</secondary></indexterm>
+<para><computeroutput>#define LARGEUR_PLATEAU&#160;&#160;&#160;15</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00014">14</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_header_8h_1a638186aae25d9df69cfcdbc0d8a75d86"/><section>
+    <title>MAX_MOTS_DICTIONNAIRE</title>
+<indexterm><primary>MAX_MOTS_DICTIONNAIRE</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>MAX_MOTS_DICTIONNAIRE</secondary></indexterm>
+<para><computeroutput>#define MAX_MOTS_DICTIONNAIRE&#160;&#160;&#160;100000</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00027">27</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_header_8h_1a8076e41d81de561b4ea9089b6bae4d0a"/><section>
+    <title>NOMBRE_JOUEURS</title>
+<indexterm><primary>NOMBRE_JOUEURS</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>NOMBRE_JOUEURS</secondary></indexterm>
+<para><computeroutput>#define NOMBRE_JOUEURS&#160;&#160;&#160;4</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00025">25</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_header_8h_1ae142b97b7fd1a11e272db115ff3e9dd0"/><section>
+    <title>NOMBRE_LETTRES_ALPHABET</title>
+<indexterm><primary>NOMBRE_LETTRES_ALPHABET</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>NOMBRE_LETTRES_ALPHABET</secondary></indexterm>
+<para><computeroutput>#define NOMBRE_LETTRES_ALPHABET&#160;&#160;&#160;26</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00023">23</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_header_8h_1a4a0360548ced653d9def25924808d677"/><section>
+    <title>NOMBRE_LETTRES_PIOCHE</title>
+<indexterm><primary>NOMBRE_LETTRES_PIOCHE</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>NOMBRE_LETTRES_PIOCHE</secondary></indexterm>
+<para><computeroutput>#define NOMBRE_LETTRES_PIOCHE&#160;&#160;&#160;7</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00024">24</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_header_8h_1a8615188743ced8e957e5f5c53498026c"/><section>
+    <title>NOMBRE_TOTAL_DE_JETONS</title>
+<indexterm><primary>NOMBRE_TOTAL_DE_JETONS</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>NOMBRE_TOTAL_DE_JETONS</secondary></indexterm>
+<para><computeroutput>#define NOMBRE_TOTAL_DE_JETONS&#160;&#160;&#160;100</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00022">22</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_header_8h_1ad7c3b975e5552a122f836b02fa138502"/><section>
+    <title>RESET_COLOR</title>
+<indexterm><primary>RESET_COLOR</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>RESET_COLOR</secondary></indexterm>
+<para><computeroutput>#define RESET_COLOR&#160;&#160;&#160;7</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00016">16</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_header_8h_1a9327754b56aee6200982dd55f31d3301"/><section>
+    <title>ROUGE_COLOR</title>
+<indexterm><primary>ROUGE_COLOR</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>ROUGE_COLOR</secondary></indexterm>
+<para><computeroutput>#define ROUGE_COLOR&#160;&#160;&#160;12</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00071">71</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_header_8h_1a8bec76a2c45a3f9101fab88c2284dcc5"/><section>
+    <title>VERT_COLOR</title>
+<indexterm><primary>VERT_COLOR</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>VERT_COLOR</secondary></indexterm>
+<para><computeroutput>#define VERT_COLOR&#160;&#160;&#160;10</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00072">72</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_header_8h_1a891725f62dcd870ad42d51957c4fa9fa"/><section>
+    <title>VIOLET_COLOR</title>
+<indexterm><primary>VIOLET_COLOR</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>VIOLET_COLOR</secondary></indexterm>
+<para><computeroutput>#define VIOLET_COLOR&#160;&#160;&#160;13</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00075">75</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_header_8h_1aec3978e0c8aa77c1ffa58169366f915c"/><section>
+    <title>abandonnerJeu()</title>
+<indexterm><primary>abandonnerJeu</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>abandonnerJeu</secondary></indexterm>
+<para><computeroutput>void abandonnerJeu (struct <link linkend="_struct_sac_de_jetons">SacDeJetons</link> * sac, struct <link linkend="_struct_plateau">Plateau</link> * plateau, struct <link linkend="_struct_joueur">Joueur</link> * joueur)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00640">640</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_aec3978e0c8aa77c1ffa58169366f915c_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_aec3978e0c8aa77c1ffa58169366f915c_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_header_8h_1a5c53e4e38a5a5dd0255154f34b2f97f5"/><section>
+    <title>afficherChronometre()</title>
+<indexterm><primary>afficherChronometre</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>afficherChronometre</secondary></indexterm>
+<para><computeroutput>void afficherChronometre (struct <link linkend="_struct_chronometre_info">ChronometreInfo</link> * chronoInfo)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00166">166</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_a5c53e4e38a5a5dd0255154f34b2f97f5_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_header_8h_1a6a43f02509c7b79b600ba7b2f72dc136"/><section>
+    <title>afficherInformationJoueur()</title>
+<indexterm><primary>afficherInformationJoueur</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>afficherInformationJoueur</secondary></indexterm>
+<para><computeroutput>void afficherInformationJoueur (const struct <link linkend="_struct_joueur">Joueur</link> * joueur)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00393">393</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+</section>
+<anchor xml:id="_header_8h_1acf9028e4c97a01a61799466467dd8328"/><section>
+    <title>afficherMotSurPlateau()</title>
+<indexterm><primary>afficherMotSurPlateau</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>afficherMotSurPlateau</secondary></indexterm>
+<para><computeroutput>void afficherMotSurPlateau (struct <link linkend="_struct_plateau">Plateau</link> * plateau, const struct <link linkend="_struct_joueur">Joueur</link> * joueur)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00178">178</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_acf9028e4c97a01a61799466467dd8328_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_header_8h_1a50c50255ace22713cf8b73636bcace30"/><section>
+    <title>afficherPlateau()</title>
+<indexterm><primary>afficherPlateau</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>afficherPlateau</secondary></indexterm>
+<para><computeroutput>void afficherPlateau (const struct <link linkend="_struct_plateau">Plateau</link> * plateau)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00275">275</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_a50c50255ace22713cf8b73636bcace30_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_header_8h_1aafe6c1764fdcac8f2f297762d0c6484d"/><section>
+    <title>afficherPlateauAvecBordures()</title>
+<indexterm><primary>afficherPlateauAvecBordures</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>afficherPlateauAvecBordures</secondary></indexterm>
+<para><computeroutput>void afficherPlateauAvecBordures (const struct <link linkend="_struct_plateau">Plateau</link> * plateau)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00301">301</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_aafe6c1764fdcac8f2f297762d0c6484d_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_aafe6c1764fdcac8f2f297762d0c6484d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_header_8h_1a0ec96f0e78daea20fbaadfaa0265ef7d"/><section>
+    <title>afficherPlateauAvecMots()</title>
+<indexterm><primary>afficherPlateauAvecMots</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>afficherPlateauAvecMots</secondary></indexterm>
+<para><computeroutput>void afficherPlateauAvecMots (const struct <link linkend="_struct_plateau">Plateau</link> * plateau)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00210">210</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_a0ec96f0e78daea20fbaadfaa0265ef7d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_header_8h_1a0a0e06d44d3181d5d789c0edf117bd1f"/><section>
+    <title>arreterChronometre()</title>
+<indexterm><primary>arreterChronometre</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>arreterChronometre</secondary></indexterm>
+<para><computeroutput>void arreterChronometre (struct <link linkend="_struct_chronometre_info">ChronometreInfo</link> * chronoInfo)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00163">163</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_a0a0e06d44d3181d5d789c0edf117bd1f_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_header_8h_1a221172025df8249130db3f63f93d7332"/><section>
+    <title>chronometre()</title>
+<indexterm><primary>chronometre</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>chronometre</secondary></indexterm>
+<para><computeroutput>void * chronometre (void * arg)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00133">133</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_a221172025df8249130db3f63f93d7332_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_header_8h_1a138484bf93fbfd911dde40aba32ec463"/><section>
+    <title>demarrerChronometre()</title>
+<indexterm><primary>demarrerChronometre</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>demarrerChronometre</secondary></indexterm>
+<para><computeroutput>void demarrerChronometre (struct <link linkend="_struct_chronometre_info">ChronometreInfo</link> * chronoInfo)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00158">158</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_a138484bf93fbfd911dde40aba32ec463_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_a138484bf93fbfd911dde40aba32ec463_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_header_8h_1a8c4ac5d84916abe58e256541f49e1c42"/><section>
+    <title>getColorForBonus()</title>
+<indexterm><primary>getColorForBonus</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>getColorForBonus</secondary></indexterm>
+<para><computeroutput>int getColorForBonus (char bonusSymbol)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00116">116</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+</section>
+<anchor xml:id="_header_8h_1ab42256bf99a127446582147bcab7517d"/><section>
+    <title>initialiserChevalet()</title>
+<indexterm><primary>initialiserChevalet</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>initialiserChevalet</secondary></indexterm>
+<para><computeroutput>void initialiserChevalet (struct <link linkend="_struct_joueur">Joueur</link> * joueur)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00371">371</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_ab42256bf99a127446582147bcab7517d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_header_8h_1a7542b1a0bab64f040b0207557390ef70"/><section>
+    <title>initialiserPlateau()</title>
+<indexterm><primary>initialiserPlateau</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>initialiserPlateau</secondary></indexterm>
+<para><computeroutput>void initialiserPlateau (struct <link linkend="_struct_plateau">Plateau</link> * plateau)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00242">242</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_a7542b1a0bab64f040b0207557390ef70_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_header_8h_1a1c91f2bb19a517cd09d40a437015f526"/><section>
+    <title>initialiserSacDeJetons()</title>
+<indexterm><primary>initialiserSacDeJetons</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>initialiserSacDeJetons</secondary></indexterm>
+<para><computeroutput>void initialiserSacDeJetons (struct <link linkend="_struct_sac_de_jetons">SacDeJetons</link> * sac)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00454">454</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_a1c91f2bb19a517cd09d40a437015f526_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_header_8h_1ab8b1fd45c61c8a6cbedf8a1bdb74b921"/><section>
+    <title>jouerParties()</title>
+<indexterm><primary>jouerParties</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>jouerParties</secondary></indexterm>
+<para><computeroutput>void jouerParties ( )</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00399">399</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_ab8b1fd45c61c8a6cbedf8a1bdb74b921_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_ab8b1fd45c61c8a6cbedf8a1bdb74b921_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_header_8h_1a6b8b52777c2a123f3b038f2c1dcb08ff"/><section>
+    <title>libererMemoireJoueurs()</title>
+<indexterm><primary>libererMemoireJoueurs</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>libererMemoireJoueurs</secondary></indexterm>
+<para><computeroutput>void libererMemoireJoueurs (struct <link linkend="_struct_joueur">Joueur</link> * joueurs)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00367">367</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_a6b8b52777c2a123f3b038f2c1dcb08ff_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_header_8h_1a6b0067666ba7d74453f3a3c2c61d84a6"/><section>
+    <title>Menu()</title>
+<indexterm><primary>Menu</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>Menu</secondary></indexterm>
+<para><computeroutput>int Menu ( )</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00606">606</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_a6b0067666ba7d74453f3a3c2c61d84a6_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_a6b0067666ba7d74453f3a3c2c61d84a6_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_header_8h_1a3035e93c68052101047b79fc93660680"/><section>
+    <title>motValide()</title>
+<indexterm><primary>motValide</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>motValide</secondary></indexterm>
+<para><computeroutput>bool motValide (const char * mot)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00084">84</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_a3035e93c68052101047b79fc93660680_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_header_8h_1a5128519771d9eb20c4a417a47b42336b"/><section>
+    <title>piocherLettres()</title>
+<indexterm><primary>piocherLettres</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>piocherLettres</secondary></indexterm>
+<para><computeroutput>void piocherLettres (struct <link linkend="_struct_sac_de_jetons">SacDeJetons</link> * sac, struct <link linkend="_struct_joueur">Joueur</link> * joueur, int nbLettres)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00497">497</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_a5128519771d9eb20c4a417a47b42336b_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_header_8h_1a1b225a9e0593fd36483927054f5c3626"/><section>
+    <title>reinitialiserChronometre()</title>
+<indexterm><primary>reinitialiserChronometre</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>reinitialiserChronometre</secondary></indexterm>
+<para><computeroutput>void reinitialiserChronometre (struct <link linkend="_struct_chronometre_info">ChronometreInfo</link> * chronoInfo)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00153">153</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_a1b225a9e0593fd36483927054f5c3626_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_header_8h_1afe00396766eb6b8ca4674de4c5d3d949"/><section>
+    <title>resetColor()</title>
+<indexterm><primary>resetColor</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>resetColor</secondary></indexterm>
+<para><computeroutput>void resetColor ( )</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00112">112</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_afe00396766eb6b8ca4674de4c5d3d949_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_header_8h_1a6ebe1942c0cc6bcf1add4113169b5056"/><section>
+    <title>saisirEmplacement()</title>
+<indexterm><primary>saisirEmplacement</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>saisirEmplacement</secondary></indexterm>
+<para><computeroutput>void saisirEmplacement (struct <link linkend="_struct_joueur">Joueur</link> * joueur, int * ligne, int * colonne)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00226">226</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_a6ebe1942c0cc6bcf1add4113169b5056_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_header_8h_1ae39022681322f8055ae7e411ee5052b0"/><section>
+    <title>saisirMotPlacement()</title>
+<indexterm><primary>saisirMotPlacement</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>saisirMotPlacement</secondary></indexterm>
+<para><computeroutput>void saisirMotPlacement (struct <link linkend="_struct_joueur">Joueur</link> * joueur)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00221">221</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_ae39022681322f8055ae7e411ee5052b0_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_header_8h_1ac2d52dae5f7f866b48fedecf4cb85819"/><section>
+    <title>saisirNombreJoueurs()</title>
+<indexterm><primary>saisirNombreJoueurs</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>saisirNombreJoueurs</secondary></indexterm>
+<para><computeroutput>int saisirNombreJoueurs ( )</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00335">335</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_ac2d52dae5f7f866b48fedecf4cb85819_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_header_8h_1af6e24be33010eaa11b5bed912225917e"/><section>
+    <title>saisirNomsJoueurs()</title>
+<indexterm><primary>saisirNomsJoueurs</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>saisirNomsJoueurs</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_struct_joueur">Joueur</link> * saisirNomsJoueurs (int nombreJoueurs)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00349">349</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_af6e24be33010eaa11b5bed912225917e_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_header_8h_1aabe753c71634fa9afaef8ba7cfdeeaa1"/><section>
+    <title>saisirSensMot()</title>
+<indexterm><primary>saisirSensMot</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>saisirSensMot</secondary></indexterm>
+<para><computeroutput>void saisirSensMot (struct <link linkend="_struct_joueur">Joueur</link> * joueur)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00235">235</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_aabe753c71634fa9afaef8ba7cfdeeaa1_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_header_8h_1a75b9cb32ff80bf061791beb01a8433d0"/><section>
+    <title>setColor()</title>
+<indexterm><primary>setColor</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>setColor</secondary></indexterm>
+<para><computeroutput>void setColor (int color)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00108">108</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_a75b9cb32ff80bf061791beb01a8433d0_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_header_8h_1a8c9be5841b813b76cb58fb875a726720"/><section>
+    <title>tourDeJeu()</title>
+<indexterm><primary>tourDeJeu</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>tourDeJeu</secondary></indexterm>
+<para><computeroutput>void tourDeJeu (struct <link linkend="_struct_sac_de_jetons">SacDeJetons</link> * sac, struct <link linkend="_struct_plateau">Plateau</link> * plateau, struct <link linkend="_struct_joueur">Joueur</link> * joueurs, int joueurActuel)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00526">526</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_a8c9be5841b813b76cb58fb875a726720_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="header_8h_a8c9be5841b813b76cb58fb875a726720_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_header_8h_1ad714fb89ca359bc9d6428b8e5827d003"/><section>
+    <title>sac</title>
+<indexterm><primary>sac</primary><secondary>header.h</secondary></indexterm>
+<indexterm><primary>header.h</primary><secondary>sac</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_struct_sac_de_jetons">SacDeJetons</link> sac</computeroutput></para></section>
+</section>
+</section>

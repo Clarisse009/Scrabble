@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_jeton" xml:lang="en-US">
+<title>Jeton Struct Reference</title>
+<indexterm><primary>Jeton</primary></indexterm>
+<para>
+<computeroutput>#include &lt;header.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>char <link linkend="_struct_jeton_1a1bfcf0437ed0ba6c25a7e3957a62efbc">lettre</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_jeton_1a63be9af5e3592a6e0278d38dab41880c">valeur</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="_header_8h_source_1l00033">33</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_jeton_1a1bfcf0437ed0ba6c25a7e3957a62efbc"/><section>
+    <title>lettre</title>
+<indexterm><primary>lettre</primary><secondary>Jeton</secondary></indexterm>
+<indexterm><primary>Jeton</primary><secondary>lettre</secondary></indexterm>
+<para><computeroutput>char Jeton::lettre</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00034">34</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_struct_jeton_1a63be9af5e3592a6e0278d38dab41880c"/><section>
+    <title>valeur</title>
+<indexterm><primary>valeur</primary><secondary>Jeton</secondary></indexterm>
+<indexterm><primary>Jeton</primary><secondary>valeur</secondary></indexterm>
+<para><computeroutput>int Jeton::valeur</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00035">35</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_header_8h">header.h</link></section>
+</section>

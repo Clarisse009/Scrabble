@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_plateau" xml:lang="en-US">
+<title>Plateau Struct Reference</title>
+<indexterm><primary>Plateau</primary></indexterm>
+<para>
+<computeroutput>#include &lt;header.h&gt;</computeroutput>
+</para>
+Collaboration diagram for Plateau:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_plateau__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>char <link linkend="_struct_plateau_1ab1cb7a5e66945c2f67f459c9a40f15b7">cases</link> [<link linkend="_header_8h_1a9d01b9bb7c13f3d39b767df21342a371">LARGEUR_PLATEAU</link>][<link linkend="_header_8h_1a29927d4a51e622dc39783f06f6197f14">HAUTEUR_PLATEAU</link>]</para>
+</listitem>
+            <listitem><para>char <link linkend="_struct_plateau_1ad0f69bade34995719c74f6b9a41579db">bonus</link> [<link linkend="_header_8h_1a9d01b9bb7c13f3d39b767df21342a371">LARGEUR_PLATEAU</link>][<link linkend="_header_8h_1a29927d4a51e622dc39783f06f6197f14">HAUTEUR_PLATEAU</link>]</para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_mot_place">MotPlace</link> <link linkend="_struct_plateau_1a2c726cb2142980ddd958140337b2cda4">motsPlaces</link> [50]</para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_plateau_1a826fb2d7d8ec98bb4c8826a62c66dd58">nbMotsPlaces</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="_header_8h_source_1l00063">63</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_plateau_1ad0f69bade34995719c74f6b9a41579db"/><section>
+    <title>bonus</title>
+<indexterm><primary>bonus</primary><secondary>Plateau</secondary></indexterm>
+<indexterm><primary>Plateau</primary><secondary>bonus</secondary></indexterm>
+<para><computeroutput>char Plateau::bonus[<link linkend="_header_8h_1a9d01b9bb7c13f3d39b767df21342a371">LARGEUR_PLATEAU</link>][<link linkend="_header_8h_1a29927d4a51e622dc39783f06f6197f14">HAUTEUR_PLATEAU</link>]</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00065">65</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_struct_plateau_1ab1cb7a5e66945c2f67f459c9a40f15b7"/><section>
+    <title>cases</title>
+<indexterm><primary>cases</primary><secondary>Plateau</secondary></indexterm>
+<indexterm><primary>Plateau</primary><secondary>cases</secondary></indexterm>
+<para><computeroutput>char Plateau::cases[<link linkend="_header_8h_1a9d01b9bb7c13f3d39b767df21342a371">LARGEUR_PLATEAU</link>][<link linkend="_header_8h_1a29927d4a51e622dc39783f06f6197f14">HAUTEUR_PLATEAU</link>]</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00064">64</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_struct_plateau_1a2c726cb2142980ddd958140337b2cda4"/><section>
+    <title>motsPlaces</title>
+<indexterm><primary>motsPlaces</primary><secondary>Plateau</secondary></indexterm>
+<indexterm><primary>Plateau</primary><secondary>motsPlaces</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_struct_mot_place">MotPlace</link> Plateau::motsPlaces[50]</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00066">66</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_struct_plateau_1a826fb2d7d8ec98bb4c8826a62c66dd58"/><section>
+    <title>nbMotsPlaces</title>
+<indexterm><primary>nbMotsPlaces</primary><secondary>Plateau</secondary></indexterm>
+<indexterm><primary>Plateau</primary><secondary>nbMotsPlaces</secondary></indexterm>
+<para><computeroutput>int Plateau::nbMotsPlaces</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00067">67</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_header_8h">header.h</link></section>
+</section>

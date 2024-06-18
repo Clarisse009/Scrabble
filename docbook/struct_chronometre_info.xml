@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_chronometre_info" xml:lang="en-US">
+<title>ChronometreInfo Struct Reference</title>
+<indexterm><primary>ChronometreInfo</primary></indexterm>
+<para>
+<computeroutput>#include &lt;header.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>pthread_t <link linkend="_struct_chronometre_info_1aa81dd0b492ccbbd6c68eb2b085aff453">threadChrono</link></para>
+</listitem>
+            <listitem><para>time_t <link linkend="_struct_chronometre_info_1ad7d2d9a06242a16fdeb4e3ca0ebd5709">debutChrono</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="_header_8h_source_1l00077">77</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_chronometre_info_1ad7d2d9a06242a16fdeb4e3ca0ebd5709"/><section>
+    <title>debutChrono</title>
+<indexterm><primary>debutChrono</primary><secondary>ChronometreInfo</secondary></indexterm>
+<indexterm><primary>ChronometreInfo</primary><secondary>debutChrono</secondary></indexterm>
+<para><computeroutput>time_t ChronometreInfo::debutChrono</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00079">79</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_struct_chronometre_info_1aa81dd0b492ccbbd6c68eb2b085aff453"/><section>
+    <title>threadChrono</title>
+<indexterm><primary>threadChrono</primary><secondary>ChronometreInfo</secondary></indexterm>
+<indexterm><primary>ChronometreInfo</primary><secondary>threadChrono</secondary></indexterm>
+<para><computeroutput>pthread_t ChronometreInfo::threadChrono</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00078">78</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_header_8h">header.h</link></section>
+</section>

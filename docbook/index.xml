@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_index" xml:lang="en-US">
+    <info>
+    <title>My Project</title>
+    </info>
+<chapter>
+    <title>Class Documentation</title>
+    <xi:include href="struct_chronometre_info.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_jeton.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_joueur.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_mot_place.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_plateau.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_sac_de_jetons.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>File Documentation</title>
+    <xi:include href="header_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="header_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="main_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="main_8c_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="sspgm_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="sspgm_8c_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<index/>
+</book>

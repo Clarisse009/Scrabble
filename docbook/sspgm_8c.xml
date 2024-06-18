@@ -1,0 +1,768 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_sspgm_8c" xml:lang="en-US">
+<title>sspgm.c File Reference</title>
+<indexterm><primary>sspgm.c</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;header.h&quot;<?linebreak?>#include &lt;stdio.h&gt;<?linebreak?>#include &lt;stdlib.h&gt;<?linebreak?>#include &lt;time.h&gt;<?linebreak?>#include &lt;string.h&gt;<?linebreak?>#include &lt;unistd.h&gt;<?linebreak?>#include &lt;ctype.h&gt;<?linebreak?>#include &lt;windows.h&gt;<?linebreak?>#include &lt;stdbool.h&gt;<?linebreak?></programlisting>Include dependency graph for sspgm.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_sspgm_8c_1af77a445894f2f750d43cf2182cd29e55">ANSI_RESET</link>&#160;&#160;&#160;&quot;\x1b[0m&quot;</para>
+</listitem>
+            <listitem><para>#define <link linkend="_sspgm_8c_1a7f026776e12ac1b5e7736c24b756085d">ANSI_RED</link>&#160;&#160;&#160;&quot;\x1b[31m&quot;</para>
+</listitem>
+            <listitem><para>#define <link linkend="_sspgm_8c_1ad050fd71ced44460a0c723a1715c40e5">ANSI_GREEN</link>&#160;&#160;&#160;&quot;\x1b[32m&quot;</para>
+</listitem>
+            <listitem><para>#define <link linkend="_sspgm_8c_1af6e8b5c7b35e8bff4c581efd8019c798">ANSI_YELLOW</link>&#160;&#160;&#160;&quot;\x1b[33m&quot;</para>
+</listitem>
+            <listitem><para>#define <link linkend="_sspgm_8c_1a50a197ede59d7694515c3dad4557cf00">ANSI_BLUE</link>&#160;&#160;&#160;&quot;\x1b[34m&quot;</para>
+</listitem>
+            <listitem><para>#define <link linkend="_sspgm_8c_1a916adb7bc4dce02012a5b2abe91a8869">ANSI_PURPLE</link>&#160;&#160;&#160;&quot;\x1b[35m&quot;</para>
+</listitem>
+            <listitem><para>#define <link linkend="_sspgm_8c_1ae142b97b7fd1a11e272db115ff3e9dd0">NOMBRE_LETTRES_ALPHABET</link>&#160;&#160;&#160;26</para>
+</listitem>
+            <listitem><para>#define <link linkend="_sspgm_8c_1a4a0360548ced653d9def25924808d677">NOMBRE_LETTRES_PIOCHE</link>&#160;&#160;&#160;7</para>
+</listitem>
+            <listitem><para>#define <link linkend="_sspgm_8c_1ae419a56a77e3fc8139e8af88c93db7eb">BONUS_LETTRE_DOUBLE</link>&#160;&#160;&#160;&apos;L&apos;</para>
+</listitem>
+            <listitem><para>#define <link linkend="_sspgm_8c_1abd0197c95d824a85ab9a8bdab59c7952">BONUS_LETTRE_TRIPLE</link>&#160;&#160;&#160;&apos;l&apos;</para>
+</listitem>
+            <listitem><para>#define <link linkend="_sspgm_8c_1a0df31e09944685ed67a2e7d0dd1c4cd7">BONUS_MOT_DOUBLE</link>&#160;&#160;&#160;&apos;M&apos;</para>
+</listitem>
+            <listitem><para>#define <link linkend="_sspgm_8c_1ab3c0a9db5827a0921cc5f4d3735edc46">BONUS_MOT_TRIPLE</link>&#160;&#160;&#160;&apos;m&apos;</para>
+</listitem>
+            <listitem><para>#define <link linkend="_sspgm_8c_1a656668d2c76dda1d593122f7931cf876">NOMBRE_PARTIES</link>&#160;&#160;&#160;1000</para>
+</listitem>
+            <listitem><para>#define <link linkend="_sspgm_8c_1a2ba568cd338f24f05e127186d779379f">NOMBRE_TOURS</link>&#160;&#160;&#160;1000</para>
+</listitem>
+            <listitem><para>#define <link linkend="_sspgm_8c_1a8f102d7fba69b919aa82ca3ff5df5586">TEMPS_MAX</link>&#160;&#160;&#160;60</para>
+</listitem>
+            <listitem><para>#define <link linkend="_sspgm_8c_1adfe7d8c864d86f866522304887eae352">DICTIONARY_FILE_PATH</link>&#160;&#160;&#160;&quot;liste_francais.txt&quot;</para>
+</listitem>
+            <listitem><para>#define <link linkend="_sspgm_8c_1a9ed616763f9abe9ba1f7b8ddeb3d38fd">DUREE_TOUR</link>&#160;&#160;&#160;60</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_sspgm_8c_1aba041651a99794187e442cfe1451c7e2">obtenirValeurLettre</link> (const struct <link linkend="_struct_sac_de_jetons">SacDeJetons</link> *<link linkend="_header_8h_1ad714fb89ca359bc9d6428b8e5827d003">sac</link>, char lettre)</para>
+</listitem>
+            <listitem><para>int <link linkend="_sspgm_8c_1a2ea849039b102f6909f299ca81168dbf">calculerScoreMot</link> (struct <link linkend="_struct_plateau">Plateau</link> *plateau, struct <link linkend="_struct_joueur">Joueur</link> *joueur, struct <link linkend="_struct_sac_de_jetons">SacDeJetons</link> *<link linkend="_header_8h_1ad714fb89ca359bc9d6428b8e5827d003">sac</link>)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_sspgm_8c_1a3035e93c68052101047b79fc93660680">motValide</link> (const char *mot)</para>
+</listitem>
+            <listitem><para>void <link linkend="_sspgm_8c_1a75b9cb32ff80bf061791beb01a8433d0">setColor</link> (int color)</para>
+</listitem>
+            <listitem><para>void <link linkend="_sspgm_8c_1afe00396766eb6b8ca4674de4c5d3d949">resetColor</link> ()</para>
+</listitem>
+            <listitem><para>int <link linkend="_sspgm_8c_1a8c4ac5d84916abe58e256541f49e1c42">getColorForBonus</link> (char bonusSymbol)</para>
+</listitem>
+            <listitem><para>void * <link linkend="_sspgm_8c_1a221172025df8249130db3f63f93d7332">chronometre</link> (void *arg)</para>
+</listitem>
+            <listitem><para>void <link linkend="_sspgm_8c_1a1b225a9e0593fd36483927054f5c3626">reinitialiserChronometre</link> (struct <link linkend="_struct_chronometre_info">ChronometreInfo</link> *chronoInfo)</para>
+</listitem>
+            <listitem><para>void <link linkend="_sspgm_8c_1a138484bf93fbfd911dde40aba32ec463">demarrerChronometre</link> (struct <link linkend="_struct_chronometre_info">ChronometreInfo</link> *chronoInfo)</para>
+</listitem>
+            <listitem><para>void <link linkend="_sspgm_8c_1a0a0e06d44d3181d5d789c0edf117bd1f">arreterChronometre</link> (struct <link linkend="_struct_chronometre_info">ChronometreInfo</link> *chronoInfo)</para>
+</listitem>
+            <listitem><para>void <link linkend="_sspgm_8c_1a5c53e4e38a5a5dd0255154f34b2f97f5">afficherChronometre</link> (struct <link linkend="_struct_chronometre_info">ChronometreInfo</link> *chronoInfo)</para>
+</listitem>
+            <listitem><para>void <link linkend="_sspgm_8c_1acf9028e4c97a01a61799466467dd8328">afficherMotSurPlateau</link> (struct <link linkend="_struct_plateau">Plateau</link> *plateau, const struct <link linkend="_struct_joueur">Joueur</link> *joueur)</para>
+</listitem>
+            <listitem><para>void <link linkend="_sspgm_8c_1a0ec96f0e78daea20fbaadfaa0265ef7d">afficherPlateauAvecMots</link> (const struct <link linkend="_struct_plateau">Plateau</link> *plateau)</para>
+</listitem>
+            <listitem><para>void <link linkend="_sspgm_8c_1ae39022681322f8055ae7e411ee5052b0">saisirMotPlacement</link> (struct <link linkend="_struct_joueur">Joueur</link> *joueur)</para>
+</listitem>
+            <listitem><para>void <link linkend="_sspgm_8c_1a6ebe1942c0cc6bcf1add4113169b5056">saisirEmplacement</link> (struct <link linkend="_struct_joueur">Joueur</link> *joueur, int *ligne, int *colonne)</para>
+</listitem>
+            <listitem><para>void <link linkend="_sspgm_8c_1aabe753c71634fa9afaef8ba7cfdeeaa1">saisirSensMot</link> (struct <link linkend="_struct_joueur">Joueur</link> *joueur)</para>
+</listitem>
+            <listitem><para>void <link linkend="_sspgm_8c_1a7542b1a0bab64f040b0207557390ef70">initialiserPlateau</link> (struct <link linkend="_struct_plateau">Plateau</link> *plateau)</para>
+</listitem>
+            <listitem><para>void <link linkend="_sspgm_8c_1a50c50255ace22713cf8b73636bcace30">afficherPlateau</link> (const struct <link linkend="_struct_plateau">Plateau</link> *plateau)</para>
+</listitem>
+            <listitem><para>void <link linkend="_sspgm_8c_1aafe6c1764fdcac8f2f297762d0c6484d">afficherPlateauAvecBordures</link> (const struct <link linkend="_struct_plateau">Plateau</link> *plateau)</para>
+</listitem>
+            <listitem><para>int <link linkend="_sspgm_8c_1ac2d52dae5f7f866b48fedecf4cb85819">saisirNombreJoueurs</link> ()</para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_joueur">Joueur</link> * <link linkend="_sspgm_8c_1af6e24be33010eaa11b5bed912225917e">saisirNomsJoueurs</link> (int nombreJoueurs)</para>
+</listitem>
+            <listitem><para>void <link linkend="_sspgm_8c_1a6b8b52777c2a123f3b038f2c1dcb08ff">libererMemoireJoueurs</link> (struct <link linkend="_struct_joueur">Joueur</link> *joueurs)</para>
+</listitem>
+            <listitem><para>void <link linkend="_sspgm_8c_1ab42256bf99a127446582147bcab7517d">initialiserChevalet</link> (struct <link linkend="_struct_joueur">Joueur</link> *joueur)</para>
+</listitem>
+            <listitem><para>void <link linkend="_sspgm_8c_1a6a43f02509c7b79b600ba7b2f72dc136">afficherInformationJoueur</link> (const struct <link linkend="_struct_joueur">Joueur</link> *joueur)</para>
+</listitem>
+            <listitem><para>void <link linkend="_sspgm_8c_1ab8b1fd45c61c8a6cbedf8a1bdb74b921">jouerParties</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_sspgm_8c_1a1c91f2bb19a517cd09d40a437015f526">initialiserSacDeJetons</link> (struct <link linkend="_struct_sac_de_jetons">SacDeJetons</link> *<link linkend="_header_8h_1ad714fb89ca359bc9d6428b8e5827d003">sac</link>)</para>
+</listitem>
+            <listitem><para>void <link linkend="_sspgm_8c_1a5128519771d9eb20c4a417a47b42336b">piocherLettres</link> (struct <link linkend="_struct_sac_de_jetons">SacDeJetons</link> *<link linkend="_header_8h_1ad714fb89ca359bc9d6428b8e5827d003">sac</link>, struct <link linkend="_struct_joueur">Joueur</link> *joueur, int nbLettres)</para>
+</listitem>
+            <listitem><para>void <link linkend="_sspgm_8c_1a8c9be5841b813b76cb58fb875a726720">tourDeJeu</link> (struct <link linkend="_struct_sac_de_jetons">SacDeJetons</link> *<link linkend="_header_8h_1ad714fb89ca359bc9d6428b8e5827d003">sac</link>, struct <link linkend="_struct_plateau">Plateau</link> *plateau, struct <link linkend="_struct_joueur">Joueur</link> *joueurs, int joueurActuel)</para>
+</listitem>
+            <listitem><para>void <link linkend="_sspgm_8c_1a0fc73fd0ecaeed5a4219aefe65dcb258">afficherScoreJoueur</link> (const struct <link linkend="_struct_joueur">Joueur</link> *joueur)</para>
+</listitem>
+            <listitem><para>int <link linkend="_sspgm_8c_1a6b0067666ba7d74453f3a3c2c61d84a6">Menu</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_sspgm_8c_1aec3978e0c8aa77c1ffa58169366f915c">abandonnerJeu</link> (struct <link linkend="_struct_sac_de_jetons">SacDeJetons</link> *<link linkend="_header_8h_1ad714fb89ca359bc9d6428b8e5827d003">sac</link>, struct <link linkend="_struct_plateau">Plateau</link> *plateau, struct <link linkend="_struct_joueur">Joueur</link> *joueur)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_sspgm_8c_1a50a197ede59d7694515c3dad4557cf00"/><section>
+    <title>ANSI_BLUE</title>
+<indexterm><primary>ANSI_BLUE</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>ANSI_BLUE</secondary></indexterm>
+<para><computeroutput>#define ANSI_BLUE&#160;&#160;&#160;&quot;\x1b[34m&quot;</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00018">18</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+</section>
+<anchor xml:id="_sspgm_8c_1ad050fd71ced44460a0c723a1715c40e5"/><section>
+    <title>ANSI_GREEN</title>
+<indexterm><primary>ANSI_GREEN</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>ANSI_GREEN</secondary></indexterm>
+<para><computeroutput>#define ANSI_GREEN&#160;&#160;&#160;&quot;\x1b[32m&quot;</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00016">16</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+</section>
+<anchor xml:id="_sspgm_8c_1a916adb7bc4dce02012a5b2abe91a8869"/><section>
+    <title>ANSI_PURPLE</title>
+<indexterm><primary>ANSI_PURPLE</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>ANSI_PURPLE</secondary></indexterm>
+<para><computeroutput>#define ANSI_PURPLE&#160;&#160;&#160;&quot;\x1b[35m&quot;</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00019">19</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+</section>
+<anchor xml:id="_sspgm_8c_1a7f026776e12ac1b5e7736c24b756085d"/><section>
+    <title>ANSI_RED</title>
+<indexterm><primary>ANSI_RED</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>ANSI_RED</secondary></indexterm>
+<para><computeroutput>#define ANSI_RED&#160;&#160;&#160;&quot;\x1b[31m&quot;</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00015">15</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+</section>
+<anchor xml:id="_sspgm_8c_1af77a445894f2f750d43cf2182cd29e55"/><section>
+    <title>ANSI_RESET</title>
+<indexterm><primary>ANSI_RESET</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>ANSI_RESET</secondary></indexterm>
+<para><computeroutput>#define ANSI_RESET&#160;&#160;&#160;&quot;\x1b[0m&quot;</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00014">14</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+</section>
+<anchor xml:id="_sspgm_8c_1af6e8b5c7b35e8bff4c581efd8019c798"/><section>
+    <title>ANSI_YELLOW</title>
+<indexterm><primary>ANSI_YELLOW</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>ANSI_YELLOW</secondary></indexterm>
+<para><computeroutput>#define ANSI_YELLOW&#160;&#160;&#160;&quot;\x1b[33m&quot;</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00017">17</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+</section>
+<anchor xml:id="_sspgm_8c_1ae419a56a77e3fc8139e8af88c93db7eb"/><section>
+    <title>BONUS_LETTRE_DOUBLE</title>
+<indexterm><primary>BONUS_LETTRE_DOUBLE</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>BONUS_LETTRE_DOUBLE</secondary></indexterm>
+<para><computeroutput>#define BONUS_LETTRE_DOUBLE&#160;&#160;&#160;&apos;L&apos;</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00022">22</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+</section>
+<anchor xml:id="_sspgm_8c_1abd0197c95d824a85ab9a8bdab59c7952"/><section>
+    <title>BONUS_LETTRE_TRIPLE</title>
+<indexterm><primary>BONUS_LETTRE_TRIPLE</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>BONUS_LETTRE_TRIPLE</secondary></indexterm>
+<para><computeroutput>#define BONUS_LETTRE_TRIPLE&#160;&#160;&#160;&apos;l&apos;</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00023">23</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+</section>
+<anchor xml:id="_sspgm_8c_1a0df31e09944685ed67a2e7d0dd1c4cd7"/><section>
+    <title>BONUS_MOT_DOUBLE</title>
+<indexterm><primary>BONUS_MOT_DOUBLE</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>BONUS_MOT_DOUBLE</secondary></indexterm>
+<para><computeroutput>#define BONUS_MOT_DOUBLE&#160;&#160;&#160;&apos;M&apos;</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00024">24</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+</section>
+<anchor xml:id="_sspgm_8c_1ab3c0a9db5827a0921cc5f4d3735edc46"/><section>
+    <title>BONUS_MOT_TRIPLE</title>
+<indexterm><primary>BONUS_MOT_TRIPLE</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>BONUS_MOT_TRIPLE</secondary></indexterm>
+<para><computeroutput>#define BONUS_MOT_TRIPLE&#160;&#160;&#160;&apos;m&apos;</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00025">25</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+</section>
+<anchor xml:id="_sspgm_8c_1adfe7d8c864d86f866522304887eae352"/><section>
+    <title>DICTIONARY_FILE_PATH</title>
+<indexterm><primary>DICTIONARY_FILE_PATH</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>DICTIONARY_FILE_PATH</secondary></indexterm>
+<para><computeroutput>#define DICTIONARY_FILE_PATH&#160;&#160;&#160;&quot;liste_francais.txt&quot;</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00030">30</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+</section>
+<anchor xml:id="_sspgm_8c_1a9ed616763f9abe9ba1f7b8ddeb3d38fd"/><section>
+    <title>DUREE_TOUR</title>
+<indexterm><primary>DUREE_TOUR</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>DUREE_TOUR</secondary></indexterm>
+<para><computeroutput>#define DUREE_TOUR&#160;&#160;&#160;60</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00032">32</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+</section>
+<anchor xml:id="_sspgm_8c_1ae142b97b7fd1a11e272db115ff3e9dd0"/><section>
+    <title>NOMBRE_LETTRES_ALPHABET</title>
+<indexterm><primary>NOMBRE_LETTRES_ALPHABET</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>NOMBRE_LETTRES_ALPHABET</secondary></indexterm>
+<para><computeroutput>#define NOMBRE_LETTRES_ALPHABET&#160;&#160;&#160;26</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00020">20</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+</section>
+<anchor xml:id="_sspgm_8c_1a4a0360548ced653d9def25924808d677"/><section>
+    <title>NOMBRE_LETTRES_PIOCHE</title>
+<indexterm><primary>NOMBRE_LETTRES_PIOCHE</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>NOMBRE_LETTRES_PIOCHE</secondary></indexterm>
+<para><computeroutput>#define NOMBRE_LETTRES_PIOCHE&#160;&#160;&#160;7</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00021">21</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+</section>
+<anchor xml:id="_sspgm_8c_1a656668d2c76dda1d593122f7931cf876"/><section>
+    <title>NOMBRE_PARTIES</title>
+<indexterm><primary>NOMBRE_PARTIES</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>NOMBRE_PARTIES</secondary></indexterm>
+<para><computeroutput>#define NOMBRE_PARTIES&#160;&#160;&#160;1000</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00026">26</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+</section>
+<anchor xml:id="_sspgm_8c_1a2ba568cd338f24f05e127186d779379f"/><section>
+    <title>NOMBRE_TOURS</title>
+<indexterm><primary>NOMBRE_TOURS</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>NOMBRE_TOURS</secondary></indexterm>
+<para><computeroutput>#define NOMBRE_TOURS&#160;&#160;&#160;1000</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00027">27</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+</section>
+<anchor xml:id="_sspgm_8c_1a8f102d7fba69b919aa82ca3ff5df5586"/><section>
+    <title>TEMPS_MAX</title>
+<indexterm><primary>TEMPS_MAX</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>TEMPS_MAX</secondary></indexterm>
+<para><computeroutput>#define TEMPS_MAX&#160;&#160;&#160;60</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00029">29</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_sspgm_8c_1aec3978e0c8aa77c1ffa58169366f915c"/><section>
+    <title>abandonnerJeu()</title>
+<indexterm><primary>abandonnerJeu</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>abandonnerJeu</secondary></indexterm>
+<para><computeroutput>void abandonnerJeu (struct <link linkend="_struct_sac_de_jetons">SacDeJetons</link> * sac, struct <link linkend="_struct_plateau">Plateau</link> * plateau, struct <link linkend="_struct_joueur">Joueur</link> * joueur)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00640">640</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_aec3978e0c8aa77c1ffa58169366f915c_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_aec3978e0c8aa77c1ffa58169366f915c_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_sspgm_8c_1a5c53e4e38a5a5dd0255154f34b2f97f5"/><section>
+    <title>afficherChronometre()</title>
+<indexterm><primary>afficherChronometre</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>afficherChronometre</secondary></indexterm>
+<para><computeroutput>void afficherChronometre (struct <link linkend="_struct_chronometre_info">ChronometreInfo</link> * chronoInfo)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00166">166</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_a5c53e4e38a5a5dd0255154f34b2f97f5_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_sspgm_8c_1a6a43f02509c7b79b600ba7b2f72dc136"/><section>
+    <title>afficherInformationJoueur()</title>
+<indexterm><primary>afficherInformationJoueur</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>afficherInformationJoueur</secondary></indexterm>
+<para><computeroutput>void afficherInformationJoueur (const struct <link linkend="_struct_joueur">Joueur</link> * joueur)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00393">393</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+</section>
+<anchor xml:id="_sspgm_8c_1acf9028e4c97a01a61799466467dd8328"/><section>
+    <title>afficherMotSurPlateau()</title>
+<indexterm><primary>afficherMotSurPlateau</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>afficherMotSurPlateau</secondary></indexterm>
+<para><computeroutput>void afficherMotSurPlateau (struct <link linkend="_struct_plateau">Plateau</link> * plateau, const struct <link linkend="_struct_joueur">Joueur</link> * joueur)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00178">178</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_acf9028e4c97a01a61799466467dd8328_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_sspgm_8c_1a50c50255ace22713cf8b73636bcace30"/><section>
+    <title>afficherPlateau()</title>
+<indexterm><primary>afficherPlateau</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>afficherPlateau</secondary></indexterm>
+<para><computeroutput>void afficherPlateau (const struct <link linkend="_struct_plateau">Plateau</link> * plateau)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00275">275</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_a50c50255ace22713cf8b73636bcace30_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_sspgm_8c_1aafe6c1764fdcac8f2f297762d0c6484d"/><section>
+    <title>afficherPlateauAvecBordures()</title>
+<indexterm><primary>afficherPlateauAvecBordures</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>afficherPlateauAvecBordures</secondary></indexterm>
+<para><computeroutput>void afficherPlateauAvecBordures (const struct <link linkend="_struct_plateau">Plateau</link> * plateau)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00301">301</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_aafe6c1764fdcac8f2f297762d0c6484d_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_aafe6c1764fdcac8f2f297762d0c6484d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_sspgm_8c_1a0ec96f0e78daea20fbaadfaa0265ef7d"/><section>
+    <title>afficherPlateauAvecMots()</title>
+<indexterm><primary>afficherPlateauAvecMots</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>afficherPlateauAvecMots</secondary></indexterm>
+<para><computeroutput>void afficherPlateauAvecMots (const struct <link linkend="_struct_plateau">Plateau</link> * plateau)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00210">210</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_a0ec96f0e78daea20fbaadfaa0265ef7d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_sspgm_8c_1a0fc73fd0ecaeed5a4219aefe65dcb258"/><section>
+    <title>afficherScoreJoueur()</title>
+<indexterm><primary>afficherScoreJoueur</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>afficherScoreJoueur</secondary></indexterm>
+<para><computeroutput>void afficherScoreJoueur (const struct <link linkend="_struct_joueur">Joueur</link> * joueur)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00601">601</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+</section>
+<anchor xml:id="_sspgm_8c_1a0a0e06d44d3181d5d789c0edf117bd1f"/><section>
+    <title>arreterChronometre()</title>
+<indexterm><primary>arreterChronometre</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>arreterChronometre</secondary></indexterm>
+<para><computeroutput>void arreterChronometre (struct <link linkend="_struct_chronometre_info">ChronometreInfo</link> * chronoInfo)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00163">163</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_a0a0e06d44d3181d5d789c0edf117bd1f_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_sspgm_8c_1a2ea849039b102f6909f299ca81168dbf"/><section>
+    <title>calculerScoreMot()</title>
+<indexterm><primary>calculerScoreMot</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>calculerScoreMot</secondary></indexterm>
+<para><computeroutput>int calculerScoreMot (struct <link linkend="_struct_plateau">Plateau</link> * plateau, struct <link linkend="_struct_joueur">Joueur</link> * joueur, struct <link linkend="_struct_sac_de_jetons">SacDeJetons</link> * sac)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00044">44</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_a2ea849039b102f6909f299ca81168dbf_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_sspgm_8c_1a221172025df8249130db3f63f93d7332"/><section>
+    <title>chronometre()</title>
+<indexterm><primary>chronometre</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>chronometre</secondary></indexterm>
+<para><computeroutput>void * chronometre (void * arg)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00133">133</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_a221172025df8249130db3f63f93d7332_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_sspgm_8c_1a138484bf93fbfd911dde40aba32ec463"/><section>
+    <title>demarrerChronometre()</title>
+<indexterm><primary>demarrerChronometre</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>demarrerChronometre</secondary></indexterm>
+<para><computeroutput>void demarrerChronometre (struct <link linkend="_struct_chronometre_info">ChronometreInfo</link> * chronoInfo)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00158">158</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_a138484bf93fbfd911dde40aba32ec463_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_a138484bf93fbfd911dde40aba32ec463_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_sspgm_8c_1a8c4ac5d84916abe58e256541f49e1c42"/><section>
+    <title>getColorForBonus()</title>
+<indexterm><primary>getColorForBonus</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>getColorForBonus</secondary></indexterm>
+<para><computeroutput>int getColorForBonus (char bonusSymbol)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00116">116</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+</section>
+<anchor xml:id="_sspgm_8c_1ab42256bf99a127446582147bcab7517d"/><section>
+    <title>initialiserChevalet()</title>
+<indexterm><primary>initialiserChevalet</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>initialiserChevalet</secondary></indexterm>
+<para><computeroutput>void initialiserChevalet (struct <link linkend="_struct_joueur">Joueur</link> * joueur)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00371">371</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_ab42256bf99a127446582147bcab7517d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_sspgm_8c_1a7542b1a0bab64f040b0207557390ef70"/><section>
+    <title>initialiserPlateau()</title>
+<indexterm><primary>initialiserPlateau</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>initialiserPlateau</secondary></indexterm>
+<para><computeroutput>void initialiserPlateau (struct <link linkend="_struct_plateau">Plateau</link> * plateau)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00242">242</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_a7542b1a0bab64f040b0207557390ef70_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_sspgm_8c_1a1c91f2bb19a517cd09d40a437015f526"/><section>
+    <title>initialiserSacDeJetons()</title>
+<indexterm><primary>initialiserSacDeJetons</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>initialiserSacDeJetons</secondary></indexterm>
+<para><computeroutput>void initialiserSacDeJetons (struct <link linkend="_struct_sac_de_jetons">SacDeJetons</link> * sac)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00454">454</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_a1c91f2bb19a517cd09d40a437015f526_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_sspgm_8c_1ab8b1fd45c61c8a6cbedf8a1bdb74b921"/><section>
+    <title>jouerParties()</title>
+<indexterm><primary>jouerParties</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>jouerParties</secondary></indexterm>
+<para><computeroutput>void jouerParties ( )</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00399">399</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_ab8b1fd45c61c8a6cbedf8a1bdb74b921_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_ab8b1fd45c61c8a6cbedf8a1bdb74b921_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_sspgm_8c_1a6b8b52777c2a123f3b038f2c1dcb08ff"/><section>
+    <title>libererMemoireJoueurs()</title>
+<indexterm><primary>libererMemoireJoueurs</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>libererMemoireJoueurs</secondary></indexterm>
+<para><computeroutput>void libererMemoireJoueurs (struct <link linkend="_struct_joueur">Joueur</link> * joueurs)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00367">367</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_a6b8b52777c2a123f3b038f2c1dcb08ff_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_sspgm_8c_1a6b0067666ba7d74453f3a3c2c61d84a6"/><section>
+    <title>Menu()</title>
+<indexterm><primary>Menu</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>Menu</secondary></indexterm>
+<para><computeroutput>int Menu ( )</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00606">606</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_a6b0067666ba7d74453f3a3c2c61d84a6_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_a6b0067666ba7d74453f3a3c2c61d84a6_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_sspgm_8c_1a3035e93c68052101047b79fc93660680"/><section>
+    <title>motValide()</title>
+<indexterm><primary>motValide</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>motValide</secondary></indexterm>
+<para><computeroutput>bool motValide (const char * mot)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00084">84</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_a3035e93c68052101047b79fc93660680_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_sspgm_8c_1aba041651a99794187e442cfe1451c7e2"/><section>
+    <title>obtenirValeurLettre()</title>
+<indexterm><primary>obtenirValeurLettre</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>obtenirValeurLettre</secondary></indexterm>
+<para><computeroutput>int obtenirValeurLettre (const struct <link linkend="_struct_sac_de_jetons">SacDeJetons</link> * sac, char lettre)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00033">33</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_aba041651a99794187e442cfe1451c7e2_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_sspgm_8c_1a5128519771d9eb20c4a417a47b42336b"/><section>
+    <title>piocherLettres()</title>
+<indexterm><primary>piocherLettres</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>piocherLettres</secondary></indexterm>
+<para><computeroutput>void piocherLettres (struct <link linkend="_struct_sac_de_jetons">SacDeJetons</link> * sac, struct <link linkend="_struct_joueur">Joueur</link> * joueur, int nbLettres)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00497">497</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_a5128519771d9eb20c4a417a47b42336b_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_sspgm_8c_1a1b225a9e0593fd36483927054f5c3626"/><section>
+    <title>reinitialiserChronometre()</title>
+<indexterm><primary>reinitialiserChronometre</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>reinitialiserChronometre</secondary></indexterm>
+<para><computeroutput>void reinitialiserChronometre (struct <link linkend="_struct_chronometre_info">ChronometreInfo</link> * chronoInfo)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00153">153</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_a1b225a9e0593fd36483927054f5c3626_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_sspgm_8c_1afe00396766eb6b8ca4674de4c5d3d949"/><section>
+    <title>resetColor()</title>
+<indexterm><primary>resetColor</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>resetColor</secondary></indexterm>
+<para><computeroutput>void resetColor ( )</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00112">112</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_afe00396766eb6b8ca4674de4c5d3d949_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_sspgm_8c_1a6ebe1942c0cc6bcf1add4113169b5056"/><section>
+    <title>saisirEmplacement()</title>
+<indexterm><primary>saisirEmplacement</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>saisirEmplacement</secondary></indexterm>
+<para><computeroutput>void saisirEmplacement (struct <link linkend="_struct_joueur">Joueur</link> * joueur, int * ligne, int * colonne)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00226">226</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_a6ebe1942c0cc6bcf1add4113169b5056_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_sspgm_8c_1ae39022681322f8055ae7e411ee5052b0"/><section>
+    <title>saisirMotPlacement()</title>
+<indexterm><primary>saisirMotPlacement</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>saisirMotPlacement</secondary></indexterm>
+<para><computeroutput>void saisirMotPlacement (struct <link linkend="_struct_joueur">Joueur</link> * joueur)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00221">221</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_ae39022681322f8055ae7e411ee5052b0_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_sspgm_8c_1ac2d52dae5f7f866b48fedecf4cb85819"/><section>
+    <title>saisirNombreJoueurs()</title>
+<indexterm><primary>saisirNombreJoueurs</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>saisirNombreJoueurs</secondary></indexterm>
+<para><computeroutput>int saisirNombreJoueurs ( )</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00335">335</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_ac2d52dae5f7f866b48fedecf4cb85819_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_sspgm_8c_1af6e24be33010eaa11b5bed912225917e"/><section>
+    <title>saisirNomsJoueurs()</title>
+<indexterm><primary>saisirNomsJoueurs</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>saisirNomsJoueurs</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_struct_joueur">Joueur</link> * saisirNomsJoueurs (int nombreJoueurs)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00349">349</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_af6e24be33010eaa11b5bed912225917e_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_sspgm_8c_1aabe753c71634fa9afaef8ba7cfdeeaa1"/><section>
+    <title>saisirSensMot()</title>
+<indexterm><primary>saisirSensMot</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>saisirSensMot</secondary></indexterm>
+<para><computeroutput>void saisirSensMot (struct <link linkend="_struct_joueur">Joueur</link> * joueur)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00235">235</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_aabe753c71634fa9afaef8ba7cfdeeaa1_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_sspgm_8c_1a75b9cb32ff80bf061791beb01a8433d0"/><section>
+    <title>setColor()</title>
+<indexterm><primary>setColor</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>setColor</secondary></indexterm>
+<para><computeroutput>void setColor (int color)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00108">108</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_a75b9cb32ff80bf061791beb01a8433d0_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_sspgm_8c_1a8c9be5841b813b76cb58fb875a726720"/><section>
+    <title>tourDeJeu()</title>
+<indexterm><primary>tourDeJeu</primary><secondary>sspgm.c</secondary></indexterm>
+<indexterm><primary>sspgm.c</primary><secondary>tourDeJeu</secondary></indexterm>
+<para><computeroutput>void tourDeJeu (struct <link linkend="_struct_sac_de_jetons">SacDeJetons</link> * sac, struct <link linkend="_struct_plateau">Plateau</link> * plateau, struct <link linkend="_struct_joueur">Joueur</link> * joueurs, int joueurActuel)</computeroutput></para><para>
+Definition at line <link linkend="_sspgm_8c_source_1l00526">526</link> of file <link linkend="_sspgm_8c_source">sspgm.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_a8c9be5841b813b76cb58fb875a726720_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sspgm_8c_a8c9be5841b813b76cb58fb875a726720_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+</section>

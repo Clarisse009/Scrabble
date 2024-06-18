@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_joueur" xml:lang="en-US">
+<title>Joueur Struct Reference</title>
+<indexterm><primary>Joueur</primary></indexterm>
+<para>
+<computeroutput>#include &lt;header.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>char <link linkend="_struct_joueur_1ab8556f24502332dba0db951d23ac7a61">nom</link> [50]</para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_joueur_1a680896b9ff71c2762ae653ef6aa7c8ce">score</link></para>
+</listitem>
+            <listitem><para>char <link linkend="_struct_joueur_1ac5a47de70aec4879c30436aebd4b42cd">chevalet</link> [7]</para>
+</listitem>
+            <listitem><para>char <link linkend="_struct_joueur_1aa59d77276894f84859ff87207a962943">dernierMot</link> [8]</para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_joueur_1a38ff125f2d6bdb97eddb9039f77c0876">dernierScore</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_joueur_1a5f08aebc4bb4e539043d12214d12fc07">dernierLigne</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_joueur_1a728d4890e9d62c3db4baa6b7d6bd63f8">dernierColonne</link></para>
+</listitem>
+            <listitem><para>char <link linkend="_struct_joueur_1af379ba91b62fe7bc35515a9b4521ad8f">dernierSens</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_joueur_1ac925f360ac23e2a23a4fb61b498fb1ad">finPartie</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="_header_8h_source_1l00044">44</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_joueur_1ac5a47de70aec4879c30436aebd4b42cd"/><section>
+    <title>chevalet</title>
+<indexterm><primary>chevalet</primary><secondary>Joueur</secondary></indexterm>
+<indexterm><primary>Joueur</primary><secondary>chevalet</secondary></indexterm>
+<para><computeroutput>char Joueur::chevalet[7]</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00047">47</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_struct_joueur_1a728d4890e9d62c3db4baa6b7d6bd63f8"/><section>
+    <title>dernierColonne</title>
+<indexterm><primary>dernierColonne</primary><secondary>Joueur</secondary></indexterm>
+<indexterm><primary>Joueur</primary><secondary>dernierColonne</secondary></indexterm>
+<para><computeroutput>int Joueur::dernierColonne</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00051">51</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_struct_joueur_1a5f08aebc4bb4e539043d12214d12fc07"/><section>
+    <title>dernierLigne</title>
+<indexterm><primary>dernierLigne</primary><secondary>Joueur</secondary></indexterm>
+<indexterm><primary>Joueur</primary><secondary>dernierLigne</secondary></indexterm>
+<para><computeroutput>int Joueur::dernierLigne</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00050">50</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_struct_joueur_1aa59d77276894f84859ff87207a962943"/><section>
+    <title>dernierMot</title>
+<indexterm><primary>dernierMot</primary><secondary>Joueur</secondary></indexterm>
+<indexterm><primary>Joueur</primary><secondary>dernierMot</secondary></indexterm>
+<para><computeroutput>char Joueur::dernierMot[8]</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00048">48</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_struct_joueur_1a38ff125f2d6bdb97eddb9039f77c0876"/><section>
+    <title>dernierScore</title>
+<indexterm><primary>dernierScore</primary><secondary>Joueur</secondary></indexterm>
+<indexterm><primary>Joueur</primary><secondary>dernierScore</secondary></indexterm>
+<para><computeroutput>int Joueur::dernierScore</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00049">49</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_struct_joueur_1af379ba91b62fe7bc35515a9b4521ad8f"/><section>
+    <title>dernierSens</title>
+<indexterm><primary>dernierSens</primary><secondary>Joueur</secondary></indexterm>
+<indexterm><primary>Joueur</primary><secondary>dernierSens</secondary></indexterm>
+<para><computeroutput>char Joueur::dernierSens</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00052">52</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_struct_joueur_1ac925f360ac23e2a23a4fb61b498fb1ad"/><section>
+    <title>finPartie</title>
+<indexterm><primary>finPartie</primary><secondary>Joueur</secondary></indexterm>
+<indexterm><primary>Joueur</primary><secondary>finPartie</secondary></indexterm>
+<para><computeroutput>int Joueur::finPartie</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00053">53</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_struct_joueur_1ab8556f24502332dba0db951d23ac7a61"/><section>
+    <title>nom</title>
+<indexterm><primary>nom</primary><secondary>Joueur</secondary></indexterm>
+<indexterm><primary>Joueur</primary><secondary>nom</secondary></indexterm>
+<para><computeroutput>char Joueur::nom[50]</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00045">45</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<anchor xml:id="_struct_joueur_1a680896b9ff71c2762ae653ef6aa7c8ce"/><section>
+    <title>score</title>
+<indexterm><primary>score</primary><secondary>Joueur</secondary></indexterm>
+<indexterm><primary>Joueur</primary><secondary>score</secondary></indexterm>
+<para><computeroutput>int Joueur::score</computeroutput></para><para>
+Definition at line <link linkend="_header_8h_source_1l00046">46</link> of file <link linkend="_header_8h_source">header.h</link>.</para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_header_8h">header.h</link></section>
+</section>
